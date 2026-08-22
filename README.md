@@ -50,4 +50,4 @@
 ## 🚀 Installazione
 
 ### Download diretto
-Scarica l'ultima release da [GitHub Releases](https://github.com/Molinays/MoliOptimizer/releases)
+Scarica l'ultima release: [MoliOptimizer Download](https://github.com/Molinays/MoliOptimizer/releases)
