@@ -8,7 +8,7 @@
 ## 📸 Screenshot
 
 <p align="center">
-  <img src="screenshot.png" alt="MoliOptimizer Screenshot" width="800">
+  <img width="820" height="560" alt="screenshot" src="https://github.com/user-attachments/assets/dd36f13e-ec7a-424a-a711-4399fccb4e44" />
 </p>
 
 ## ✨ Caratteristiche
