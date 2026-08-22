@@ -51,11 +51,3 @@
 
 ### Download diretto
 Scarica l'ultima release da [GitHub Releases](https://github.com/Molinays/MoliOptimizer/releases)
-
-### Esecuzione manuale
-```powershell
-# Clona il repository
-git clone https://github.com/yourusername/MoliOptimizer.git
-
-# Esegui il programma
-.\MoliOptimizer.ps1
