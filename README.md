@@ -4,7 +4,6 @@
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-blue?style=flat-square&logo=windows)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue?style=flat-square&logo=powershell)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
 ## 📸 Screenshot
 
