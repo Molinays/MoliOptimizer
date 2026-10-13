@@ -5,7 +5,7 @@
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-blue?style=flat-square&logo=windows)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue?style=flat-square&logo=powershell)
 
-## 📸 Screenshot
+## 📸 Screenshot (v1)
 
 <p align="center">
   <img width="820" height="560" alt="screenshot" src="https://github.com/user-attachments/assets/dd36f13e-ec7a-424a-a711-4399fccb4e44" />
