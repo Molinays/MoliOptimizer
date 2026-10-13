@@ -1,6 +1,6 @@
 # 🚀 MoliOptimizer
 
-**MoliOptimizer** è un potente strumento di ottimizzazione per Windows con interfaccia grafica moderna in stile dark. Progettato per migliorare le prestazioni del sistema, la privacy e la gestione della memoria attraverso tweak di registro, servizi e pulizia della RAM.
+**MoliOptimizer** è uno strumento di ottimizzazione per Windows con interfaccia grafica in stile dark. Progettato per migliorare prestazioni, privacy e gestione della memoria tramite tweak di registro, configurazione dei servizi e pulizia della RAM.
 
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-blue?style=flat-square&logo=windows)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue?style=flat-square&logo=powershell)
@@ -14,34 +14,44 @@
 ## ✨ Caratteristiche
 
 ### 🎯 Ottimizzazioni
-- **Debloat Windows**: Rimozione di app preinstallate non necessarie
-- **Privacy**: Disattivazione telemetria, Cortana, pubblicità personalizzata e tracking
-- **Prestazioni**: Tweak di sistema, pianificazione CPU/GPU, disabilitazione effetti visivi
-- **Servizi**: Configurazione intelligente dei servizi di sistema
-- **Avvio**: Disabilitazione programmi in avvio automatico
-- **Ripristino**: Backup e ripristino delle ottimizzazioni applicate
+- **Debloat Windows**: rimozione di app preinstallate non necessarie
+- **Privacy**: disattivazione telemetria, Cortana, pubblicità personalizzata e tracking
+- **Prestazioni**: tweak di sistema, pianificazione CPU/GPU, disattivazione effetti visivi
+- **Servizi**: configurazione dei servizi di sistema
+- **Avvio**: disattivazione dei programmi in avvio automatico
+- **Ripristino**: backup e ripristino delle ottimizzazioni applicate
 
-### 💾 Gestione Memoria
+### 💾 Gestione memoria
 - Pulizia cache del registro
 - Flush dei file modificati
 - Svuotamento working set dei processi
 - Ottimizzazione cache file di sistema
-- Monitoraggio in tempo reale della RAM
+- Monitoraggio della RAM in tempo reale
 
 ### 📦 App Store
-- Installazione di oltre 80 applicazioni tramite **winget**
-- Categorie: Code, Video, Social, Browser, Utility, Gaming, Media, Productivity, Cloud, Network, Security
+- Installazione di oltre 120 applicazioni tramite **winget**
+- Categorie: Browser, Sviluppo, Benchmark, Utility, Media, Social, Gaming, Sicurezza, Office, Creatività, Cloud, Rete
 - Interfaccia a griglia con icone e selezione multipla
 
 ### 💿 Download ISO
-- Collegamenti diretti a download ufficiali di:
+- Collegamenti diretti ai download ufficiali di:
   - Windows 10/11
-  - Distribuzioni Linux (Ubuntu, Fedora, Arch, Debian, ecc.)
+  - Distribuzioni Linux (Ubuntu, Fedora, Arch, Debian, Kali, ecc.)
   - Tool di recovery e virtualizzazione
+
+### 🔧 Playbook
+- Raccolta di oltre 30 playbook e tool della community
+- AME Wizard, AtlasOS, ReviOS, SophiApp, Optimizer, Winhance e altri
+- Link diretti alle pagine ufficiali
+
+### 🧠 Scansione intelligente
+- Analisi hardware e software del PC
+- Performance Score da 0 a 100
+- Piano di ottimizzazione personalizzato in base alla configurazione
 
 ## 📋 Requisiti
 
-- **Windows 10** (1809+) o **Windows 11**
+- **Windows 10** (1809 o superiore) o **Windows 11**
 - **PowerShell 5.1** o superiore
 - **Esecuzione come Amministratore** (richiesta automaticamente)
 - **winget** (opzionale, per l'installazione delle app)
