@@ -1,6 +1,6 @@
 ﻿#Requires -Version 5.1
 <#
-    WinOptimizer.ps1 - GUI Moderna Dark Theme
+    WinOptimizer.ps1 - Old_Version (v1.1) - La versione 2.0 non è ancora stata rilasciata come open source
 #>
 
 $script:startupLog = Join-Path $env:TEMP "MoliOptimizer-startup.log"
