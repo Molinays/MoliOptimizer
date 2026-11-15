@@ -2,16 +2,17 @@
   <img src="docs/images/logo.png" alt="MoliOptimizer" width="112" height="112">
 </p>
 
-<h1 align="center">MoliOptimizer 3.2</h1>
+<h1 align="center">MoliOptimizer 3.5</h1>
 
 <p align="center">
   <strong>Ottimizzazione Windows su misura, con backup e ripristino.</strong><br>
-  Due edizioni, stesso motore: WebView2 per i PC moderni, WinForms per Windows 7/10.
+  Due edizioni Windows con lo stesso motore, più un'app Android nativa.
 </p>
 
 <p align="center">
   <img alt="Platform" src="https://img.shields.io/badge/PLATFORM-WINDOWS%207%20%7C%2010%20%7C%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white">
-  <img alt="Version" src="https://img.shields.io/badge/VERSION-3.2.0-2563EB?style=for-the-badge">
+  <img alt="Android" src="https://img.shields.io/badge/ANDROID-7%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white">
+  <img alt="Version" src="https://img.shields.io/badge/VERSION-3.5.0-2563EB?style=for-the-badge">
   <img alt="Engine" src="https://img.shields.io/badge/ENGINE-POWERSHELL%205.1-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
   <img alt="License" src="https://img.shields.io/badge/LICENSE-PROPRIETARY-DC2626?style=for-the-badge">
 </p>
@@ -19,11 +20,13 @@
 <p align="center">
   <a href="https://github.com/Molinays/MoliOptimizer/releases/latest"><strong>Download</strong></a>
   &nbsp;·&nbsp;
-  <a href="#novità-in-32">Novità 3.2</a>
+  <a href="#novità-in-35">Novità 3.5</a>
   &nbsp;·&nbsp;
   <a href="#funzioni">Funzioni</a>
   &nbsp;·&nbsp;
   <a href="#protezione">Protezione</a>
+  &nbsp;·&nbsp;
+  <a href="#android">Android</a>
   &nbsp;·&nbsp;
   <a href="#licenza">Licenza</a>
 </p>
@@ -32,14 +35,32 @@
 
 ---
 
-## Novità in 3.2
+## Screenshot
 
+<p align="center">
+  <img src="docs/images/web-3.5.png" alt="MoliOptimizer Web 3.5 - Ottimizzazioni" width="900">
+</p>
+
+<p align="center"><sub>MoliOptimizer Web 3.5 su Windows: piano personalizzato, stato del PC e console del motore.</sub></p>
+
+<p align="center">
+  <img src="docs/images/fast-3.5.png" alt="MoliOptimizerFast 3.5 - Ottimizzazioni" width="900">
+</p>
+
+<p align="center"><sub>MoliOptimizerFast 3.5: interfaccia WinForms nativa, scansione reale e piano consigliato.</sub></p>
+
+---
+
+## Novità in 3.5
+
+- **Build 3.5.** Riallineati Windows, web, launcher e Android alla versione `3.5.0`, con rebuild completo e checksum aggiornati.
 - **Popup Fast finalmente cliccabili.** Il filtro globale dei click veniva sospeso solo per le finestre normali, non per i dialoghi modali: ora conferma e resoconto restano interattivi e il filtro viene ripristinato alla chiusura.
 - **Popup più compatti.** Eliminati kicker e spaziature superflue; i messaggi lunghi hanno un'area scorrevole e i pulsanti hanno un click esplicito.
 - **Icona ufficiale ovunque.** Splash, finestra principale e taskbar usano l'icona della v1, non più il segnaposto predefinito di WinForms.
 - **GUI web più sobria.** Rimossi sottotitoli, punteggi duplicati e scritte promozionali; angoli a 3 px, niente gradienti o animazioni decorative.
-- **Distribuzione protetta.** Fast e Web non contengono più il motore in chiaro: payload compresso, cifrato e autenticato, UI servita dalla memoria e bridge estratto solo a runtime.
-- **Versione e documentazione allineate.** Titoli, manifest, pacchetto web, build single-file e controllo aggiornamenti riportano `3.2.0`.
+- **Distribuzione più lineare.** Fast usa un host .NET in-process senza `ps2exe`; Web e WebSingle servono la UI dalla memoria senza aprire un server HTTP locale.
+- **Versione e documentazione allineate.** Titoli, manifest, pacchetto web, build single-file e controllo aggiornamenti riportano `3.5.0`.
+- **Edizione Android 3.5.** APK nativa separata, con scansione del dispositivo, piano locale, pulizia sicura e modalità root opzionale. Vedi [android/README.md](android/README.md).
 
 ---
 
@@ -47,14 +68,32 @@
 
 | Pacchetto | Formato | Piattaforma | Note |
 |---|---|---|---|
-| **MoliOptimizer** · `MoliOptimizer.exe` | `.exe` singolo | Windows 10/11 x64 | Estrae host e DLL in `%LOCALAPPDATA%`; richiede WebView2 Runtime |
-| **MoliOptimizer Web Host** · `MoliOptimizer-Web.exe` | `.exe` + DLL WebView2 | Windows 10/11 x64 | Avvio rapido; va eseguito dalla propria cartella |
-| **MoliOptimizerFast IT** · `MoliOptimizerFast-IT.exe` | `.exe` | Windows 7/10, PowerShell 5.1 | Nessun WebView2, interfaccia italiana |
-| **MoliOptimizerFast EN** · `MoliOptimizerFast-EN.exe` | `.exe` | Windows 7/10, PowerShell 5.1 | Nessun WebView2, interfaccia inglese |
+| **MoliOptimizer** · `MoliOptimizer.exe` | `.exe` singolo (1,47 MB) | Windows 10/11 x64 | Launcher nativo; estrae host e DLL in `%LOCALAPPDATA%`; richiede WebView2 Runtime |
+| **MoliOptimizer Web Host** · `MoliOptimizer-Web.exe` | `.exe` + DLL WebView2 (427 KB) | Windows 10/11 x64 | Avvio rapido; va eseguito dalla propria cartella |
+| **MoliOptimizerFast IT** · `MoliOptimizerFast-IT.exe` | `.exe` (364 KB) | Windows 7/10, PowerShell 5.1 | Host .NET in-process, payload in chiaro, nessun WebView2, interfaccia italiana |
+| **MoliOptimizerFast EN** · `MoliOptimizerFast-EN.exe` | `.exe` (408 KB) | Windows 7/10, PowerShell 5.1 | Host .NET in-process, payload in chiaro, nessun WebView2, interfaccia inglese |
 
 Scarica l'ultima release da [GitHub Releases](https://github.com/Molinays/MoliOptimizer/releases/latest). Gli hash SHA-256 sono pubblicati in `dist/v3/SHA256SUMS.txt`.
 
 Nessun installer e nessun servizio persistente. La scansione iniziale è in sola lettura; le modifiche richiedono selezione, conferma e, per le operazioni privilegiate, UAC.
+
+---
+
+## Android
+
+La cartella [`android/`](android/README.md) contiene una **APK nativa per Android 7+**, separata dalla release Windows. Non è un porting 1:1: Android non ha registro o servizi Windows, quindi l'app implementa le azioni realmente disponibili.
+
+<p align="center">
+  <img src="docs/images/android-3.5.png" alt="MoliOptimizer 3.5 su Android" width="300">
+</p>
+
+- Scansione di RAM, spazio, batteria, temperatura, rete e sistema con punteggio locale.
+- Piano consigliato e toggle IT/EN.
+- Pulizia sicura della cache dell'app e scorciatoie alle impostazioni di sistema.
+- Modalità root opzionale per `pm trim-caches`, dexopt, `drop_caches` e `fstrim`.
+- Nessun permesso Internet, nessun analytics, nessuna connessione in background.
+
+APK generato in `android/dist/MoliOptimizer-3.5.0-android.apk` (cartella locale, esclusa da Git) con checksum separato. Istruzioni e limiti: [`android/README.md`](android/README.md). La build è firmata con chiave debug per il test; per la distribuzione serve una chiave release.
 
 ---
 
@@ -102,19 +141,21 @@ Nessun installer e nessun servizio persistente. La scansione iniziale è in sola
 
 ---
 
-## Protezione
+## Distribuzione e falsi positivi
 
-Le build distribuite non contengono il motore in chiaro:
+Le build pubbliche 3.5 non usano `ps2exe`, non aprono un server HTTP locale e non cifrano il payload:
 
-- **Fast:** il bundle viene compresso, cifrato con AES-256-CBC e autenticato con HMAC-SHA256, poi eseguito in memoria da un loader compilato. I bundle temporanei in chiaro vivono solo in `%TEMP%` durante la build e vengono rimossi.
-- **Web Host:** UI, bridge e helper sono in un payload cifrato dentro l'exe. La UI viene servita dalla memoria, senza una cartella `ui` o `src` accanto al programma.
-- **WebSingle:** il launcher incorpora l'host protetto e le DLL WebView2; la UI resta nel payload cifrato dell'host.
+- **Fast:** il bundle PowerShell viene incorporato in chiaro in un host .NET che lo esegue in-process con PowerShell 5.1. Non viene creato alcun `.ps1` in `%TEMP%`, non c'è un payload compresso/cifrato e non c'è il wrapper `ps2exe` che generava la famiglia `MSIL.Krypt`.
+- **Web Host:** UI, bridge e helper sono in un payload ZIP compresso dentro l'exe. La UI viene servita a WebView2 tramite `WebResourceRequested`, senza listener `127.0.0.1` e senza una cartella `ui` accanto al programma.
+- **WebSingle:** un launcher nativo x64 incorpora host e DLL WebView2 in un contenitore non compresso, li estrae in `%LOCALAPPDATA%` e avvia l'host. Il file esterno non è un assembly .NET.
 - **Bridge web:** viene scritto solo in una cartella runtime nascosta, con nome legato al payload e al processo, e cancellato alla chiusura.
-- **Nessun sorgente in `dist/v3`:** la build verifica che non restino `.ps1`, `.js`, `.html` o `.css` nel pacchetto web.
+- **Nessun sorgente sciolto in `dist/v3`:** la build verifica che non restino `.ps1`, `.js`, `.html` o `.css` nel pacchetto web.
 
-Nessuna protezione client-side è indecifrabile in assoluto: un programma che deve eseguire il proprio codice deve poterlo decifrare. Questa pipeline elimina il sorgente leggibile dalla distribuzione e alza il costo dell'analisi; non è un packer pensato per eludere gli antivirus. Per una verifica di sicurezza da parte di un vendor si può fornire una build non offuscata separata.
+La build pubblica è quindi più semplice da analizzare e da firmare, ma **non è offuscata**: chi estrae il payload può recuperare UI, bridge e script. È una scelta deliberata per ridurre i falsi positivi euristica/ML; non è una garanzia contro l'analisi. La build con payload cifrato resta disponibile solo come opzione interna (`Build-WebHost.ps1 -Protect`) e non va pubblicata come release.
 
-> Se hai usato build precedenti alla 3.2, elimina le vecchie cartelle `%LOCALAPPDATA%\MoliOptimizer\WebSingle\3.0.0-*` prima di distribuire il PC: contengono i sorgenti delle versioni vecchie. Le build 3.2 non ne creano più.
+Per azzerare i falsi positivi residui serve una firma Authenticode con certificato trusted e la riclassificazione presso i vendor; senza certificato nessun rebuild può garantire 0 rilevazioni su tutti i motori. La procedura è in [docs/security/false-positive-mcafee-secureage.md](docs/security/false-positive-mcafee-secureage.md).
+
+> Se hai usato build precedenti alla 3.5, elimina le vecchie cartelle `%LOCALAPPDATA%\MoliOptimizer\WebSingle\3.0.0-*` prima di distribuire il PC: contengono i sorgenti delle versioni vecchie. Le build 3.5 non ne creano più.
 
 ---
 
@@ -136,7 +177,7 @@ Nessuna protezione client-side è indecifrabile in assoluto: un programma che de
 
 ---
 
-## Due edizioni
+## Edizioni Windows
 
 | | **MoliOptimizer Web** | **MoliOptimizerFast** |
 |---|---|---|
@@ -187,7 +228,7 @@ L'app non applica nulla senza una selezione esplicita e una conferma. Le operazi
 
 ## Aggiornamenti
 
-La versione applicazione è **3.2.0**. La release più recente è disponibile su GitHub:
+La versione applicazione è **3.5.0**. La release più recente è disponibile su GitHub:
 
 https://github.com/Molinays/MoliOptimizer/releases/latest
 
@@ -207,17 +248,20 @@ MoliOptimizer non installa aggiornamenti in background e non esegue modifiche au
 Il motore resta modulare in `src/`, la GUI web in `web/`, gli script di build in `build/`. La cartella `Old/` contiene solo versioni storiche e non viene usata dalla build.
 
 ```powershell
-# Build completa: Fast IT, Fast EN e Web Host protetto
+# Build completa Windows: Fast IT/EN, Web Host e WebSingle
 .\build\Build-All.ps1
+
+# Build APK Android (cartella separata)
+.\android\build-apk.ps1
 
 # Solo MoliOptimizerFast
 .\build\Build-Exe.ps1 -Lang IT
 .\build\Build-Exe.ps1 -Lang EN
 
-# Web Host protetto, senza Rust/MSVC
+# Web Host, senza Rust/MSVC (payload compresso, non cifrato)
 .\build\Build-WebHost.ps1
 
-# Web in un solo file: host, UI, motore e DLL incorporati
+# Web in un solo file: launcher nativo x64 + host e DLL incorporati
 .\build\Build-WebSingle.ps1
 
 # Solo sviluppo: guscio Tauri, finisce in dist/dev/web
@@ -232,7 +276,7 @@ npm run dev
 # http://127.0.0.1:5178
 ```
 
-`Build-WebHost.ps1` è il percorso di release web: incorpora UI e motore in un payload cifrato. Il guscio Tauri (`Build-Web.ps1`) resta solo per lo sviluppo e non va usato per distribuire una build sorgente.
+`Build-WebHost.ps1` è il percorso di release web: incorpora UI e motore in un payload ZIP e serve la UI dalla memoria, senza server HTTP. `Build-WebSingle.ps1` richiede `gcc` e `windres` (MinGW-w64 x86_64) e produce il launcher nativo. Il guscio Tauri (`Build-Web.ps1`) resta solo per lo sviluppo e non va usato per distribuire una build sorgente. Per una build interna cifrata usare `Build-WebHost.ps1 -Protect`; non è la build pubblica.
 
 Verifiche principali:
 
@@ -244,7 +288,7 @@ Verifiche principali:
 
 Se un exe è aperto, la build deve fallire con un messaggio chiaro: non dichiarare mai un falso successo. I bundle classici in chiaro vengono creati solo in `%TEMP%` e rimossi a fine build; in `dist/v3` non restano sorgenti: solo exe, DLL WebView2, favicon e `SHA256SUMS.txt`.
 
-La versione 3.2 usa `dist/v3` come cartella della serie 3.x: il numero nella cartella indica l'architettura di build, non la minor release.
+La versione 3.5 usa `dist/v3` come cartella della serie 3.x: il numero nella cartella indica l'architettura di build, non la minor release.
 
 </details>
 
@@ -274,5 +318,5 @@ Le ottimizzazioni possono modificare il comportamento del sistema operativo. Ver
 
 <p align="center">
   <strong>Made by Molinays</strong><br>
-  <sub>MoliOptimizer 3.2 · Windows 7/10/11</sub>
+  <sub>MoliOptimizer 3.5 · Windows 7/10/11 · Android 7+</sub>
 </p>
