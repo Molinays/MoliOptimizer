@@ -4,9 +4,9 @@ Questo documento serve a richiedere la riclassificazione di MoliOptimizer a McAf
 
 ## Dati dell'applicazione
 
-- Prodotto: MoliOptimizer v3 (web) e MoliOptimizerFast v3 (PowerShell)
+- Prodotto: MoliOptimizer v3.2 (web) e MoliOptimizerFast v3.2 (PowerShell)
 - Autore: Molinays
-- Versione: 3.0.0
+- Versione: 3.2.0
 - Repository: https://github.com/Molinays/MoliOptimizer
 - Release: https://github.com/Molinays/MoliOptimizer/releases
 - Tipo: ottimizzatore Windows con GUI web e GUI classica
@@ -19,10 +19,10 @@ Questi sono gli artefatti attuali, ancora non firmati. Dopo la firma gli hash ca
 
 | File | SHA-256 | Dimensione |
 |---|---|---|
-| `MoliOptimizer.exe` | `92B0BAA80339164475F6B400DDCE1560B13E68DE1A4BE2A473A7345C699B35D7` | 721.408 byte |
-| `MoliOptimizer-Web.exe` | `621BF7C7C13BA6F04DE4D73CE55212DD1F7DD5FCA36F241B2C0B5D8D5BB01D05` | 71.168 byte |
-| `MoliOptimizerFast-IT.exe` | `2E5656CFB587E0FCA469B020CD1E77066C320D90CC33B09BBB1861A1EAAC8157` | 338.432 byte |
-| `MoliOptimizerFast-EN.exe` | `57D490E1AB3AE00AD6DAE47FFCB55B9CA65FD309A1D31795165E7D69990BEC69` | 374.784 byte |
+| `MoliOptimizer.exe` | `1F8B21BFC1CE339D59B23B23F9547CECC954EB6088774E30DAF6201A763A9AD6` | 682.496 byte |
+| `MoliOptimizer-Web.exe` | `EDBD1AC314C1B1361A6E7A0C627AED3503E4B4E18560EA73E702F5DC4A20D560` | 424.960 byte |
+| `MoliOptimizerFast-IT.exe` | `B469816CFE400B59F65A961E306E9EEA54DF78E866B1D72D0C8AC79D407F75D7` | 173.056 byte |
+| `MoliOptimizerFast-EN.exe` | `E3134CE90F04E0319CDF668F359C5A7E41D6670F36806607FEB00BBBD5F72057` | 189.440 byte |
 
 ## Comportamento dichiarato
 
@@ -32,7 +32,8 @@ MoliOptimizer:
 - applica solo le ottimizzazioni scelte e confermate dall'utente;
 - salva un backup in `%ProgramData%\MoliOptimizer` e permette il ripristino;
 - usa PowerShell per le operazioni di sistema e richiede l'elevazione per registro, servizi, Appx e alimentazione;
-- nell'edizione web avvia un server HTTP locale limitato a `127.0.0.1` per servire la GUI a WebView2;
+- nell'edizione web avvia un server HTTP locale limitato a `127.0.0.1` per servire la GUI a WebView2; la UI è incorporata e servita dalla memoria;
+- contiene un payload cifrato per non distribuire il motore in chiaro; non è un packer di evasione e non modifica il comportamento del programma;
 - non installa servizi persistenti, non crea driver e non stabilisce connessioni di comando e controllo;
 - contatta GitHub solo per il controllo aggiornamenti e usa i collegamenti ufficiali per winget e ISO.
 
@@ -85,13 +86,13 @@ Selezionare la segnalazione come falso positivo, allegare il file firmato e indi
 
 ## Testo pronto per la segnalazione
 
-> Oggetto: False positive report - MoliOptimizer v3 - Molinays
+> Oggetto: False positive report - MoliOptimizer v3.2 - Molinays
 >
-> We are reporting a false positive for MoliOptimizer v3, a signed Windows optimization application published by Molinays.
+> We are reporting a false positive for MoliOptimizer v3.2, a signed Windows optimization application published by Molinays.
 >
 > File: [nome file]
 > SHA-256: [hash della build firmata]
-> Version: 3.0.0
+> Version: 3.2.0
 > Detection: [nome esatto McAfee/SecureAge]
 > VirusTotal: [link al report]
 >
@@ -104,7 +105,7 @@ Selezionare la segnalazione come falso positivo, allegare il file firmato e indi
 ## Dopo l'invio
 
 - Non disattivare McAfee, SecureAge o Defender e non aggiungere esclusioni.
-- Non usare offuscamento, packer o modifiche pensate solo per eludere il motore.
+- La cifratura del payload protegge il codice proprietario, non è pensata per eludere il motore. Se il vendor chiede una build non offuscata per l'analisi, fornirla separatamente insieme alla build di release firmata.
 - Ricaricare il file su VirusTotal dopo la risposta del vendor e verificare che le due rilevazioni siano sparite.
 - Se SecureAge continua a rilevare la classica, il wrapper `ps2exe` è il candidato principale: valutare un host .NET firmato.
 - Se continua a rilevare la web, valutare la rimozione del server HTTP locale in favore del mapping virtuale WebView2; è una modifica architetturale, non una modifica di evasione.

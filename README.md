@@ -2,183 +2,119 @@
   <img src="docs/images/logo.png" alt="MoliOptimizer" width="112" height="112">
 </p>
 
-<h1 align="center">MoliOptimizer (Windows)</h1>
+<h1 align="center">MoliOptimizer 3.2</h1>
 
 <p align="center">
-  <strong>WINDOWS OPTIMIZATION SUITE</strong><br>
-  Piano personalizzato, privacy, prestazioni, debloat e pulizia in un'unica app.
+  <strong>Ottimizzazione Windows su misura, con backup e ripristino.</strong><br>
+  Due edizioni, stesso motore: WebView2 per i PC moderni, WinForms per Windows 7/10.
 </p>
 
 <p align="center">
-  <img alt="Platform" src="https://img.shields.io/badge/PLATFORM-WINDOWS%2010%20%7C%2011%20%7C%207%2F10-0078D4?style=for-the-badge&logo=windows&logoColor=white">
-  <img alt="Version" src="https://img.shields.io/badge/VERSION-3.0.0-2563EB?style=for-the-badge">
+  <img alt="Platform" src="https://img.shields.io/badge/PLATFORM-WINDOWS%207%20%7C%2010%20%7C%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white">
+  <img alt="Version" src="https://img.shields.io/badge/VERSION-3.2.0-2563EB?style=for-the-badge">
   <img alt="Engine" src="https://img.shields.io/badge/ENGINE-POWERSHELL%205.1-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
-  <img alt="Interface" src="https://img.shields.io/badge/UI-WEBVIEW2%20%2B%20WINFORMS-0F766E?style=for-the-badge">
   <img alt="License" src="https://img.shields.io/badge/LICENSE-PROPRIETARY-DC2626?style=for-the-badge">
 </p>
 
 <p align="center">
   <a href="https://github.com/Molinays/MoliOptimizer/releases/latest"><strong>Download</strong></a>
   &nbsp;·&nbsp;
+  <a href="#novità-in-32">Novità 3.2</a>
+  &nbsp;·&nbsp;
   <a href="#funzioni">Funzioni</a>
   &nbsp;·&nbsp;
-  <a href="#sicurezza-e-ripristino">Sicurezza</a>
+  <a href="#protezione">Protezione</a>
   &nbsp;·&nbsp;
   <a href="#licenza">Licenza</a>
 </p>
 
-> **MoliOptimizer è software proprietario, non open source.** Il repository non concede diritti di modifica o ridistribuzione del codice. Vedi la sezione [Licenza](#licenza).
+> **MoliOptimizer è software proprietario, non open source.** Il repository non concede diritti di modifica o ridistribuzione del codice. Vedi [Licenza](#licenza).
+
+---
+
+## Novità in 3.2
+
+- **Popup Fast finalmente cliccabili.** Il filtro globale dei click veniva sospeso solo per le finestre normali, non per i dialoghi modali: ora conferma e resoconto restano interattivi e il filtro viene ripristinato alla chiusura.
+- **Popup più compatti.** Eliminati kicker e spaziature superflue; i messaggi lunghi hanno un'area scorrevole e i pulsanti hanno un click esplicito.
+- **Icona ufficiale ovunque.** Splash, finestra principale e taskbar usano l'icona della v1, non più il segnaposto predefinito di WinForms.
+- **GUI web più sobria.** Rimossi sottotitoli, punteggi duplicati e scritte promozionali; angoli a 3 px, niente gradienti o animazioni decorative.
+- **Distribuzione protetta.** Fast e Web non contengono più il motore in chiaro: payload compresso, cifrato e autenticato, UI servita dalla memoria e bridge estratto solo a runtime.
+- **Versione e documentazione allineate.** Titoli, manifest, pacchetto web, build single-file e controllo aggiornamenti riportano `3.2.0`.
 
 ---
 
 ## Download
 
-<p align="center">
-  <a href="https://github.com/Molinays/MoliOptimizer/releases/latest">
-    <img alt="Download MoliOptimizer" src="https://img.shields.io/badge/DOWNLOAD-MOLIOPTIMIZER%20WEB-00C8B4?style=for-the-badge&logo=windows&logoColor=white">
-  </a>
-  <a href="https://github.com/Molinays/MoliOptimizer/releases/latest">
-    <img alt="Download MoliOptimizerFast IT" src="https://img.shields.io/badge/DOWNLOAD-FAST%20IT-2563EB?style=for-the-badge&logo=powershell&logoColor=white">
-  </a>
-  <a href="https://github.com/Molinays/MoliOptimizer/releases/latest">
-    <img alt="Download MoliOptimizerFast EN" src="https://img.shields.io/badge/DOWNLOAD-FAST%20EN-7C3AED?style=for-the-badge&logo=powershell&logoColor=white">
-  </a>
-</p>
+| Pacchetto | Formato | Piattaforma | Note |
+|---|---|---|---|
+| **MoliOptimizer** · `MoliOptimizer.exe` | `.exe` singolo | Windows 10/11 x64 | Estrae host e DLL in `%LOCALAPPDATA%`; richiede WebView2 Runtime |
+| **MoliOptimizer Web Host** · `MoliOptimizer-Web.exe` | `.exe` + DLL WebView2 | Windows 10/11 x64 | Avvio rapido; va eseguito dalla propria cartella |
+| **MoliOptimizerFast IT** · `MoliOptimizerFast-IT.exe` | `.exe` | Windows 7/10, PowerShell 5.1 | Nessun WebView2, interfaccia italiana |
+| **MoliOptimizerFast EN** · `MoliOptimizerFast-EN.exe` | `.exe` | Windows 7/10, PowerShell 5.1 | Nessun WebView2, interfaccia inglese |
 
-| Pacchetto | Formato | Piattaforma | Ideale per | Download |
-|---|---|---|---|---|
-| **MoliOptimizer** · `MoliOptimizer.exe` | `.exe` singolo | Windows 10/11 x64 | Esperienza web moderna, un solo file | [Vai alla release](https://github.com/Molinays/MoliOptimizer/releases/latest) |
-| **MoliOptimizer Web Host** · `MoliOptimizer-Web.exe` | `.exe` + cartella di supporto | Windows 10/11 x64 | Avvio rapido con pacchetto web separato | [Vai alla release](https://github.com/Molinays/MoliOptimizer/releases/latest) |
-| **MoliOptimizerFast IT** · `MoliOptimizerFast-IT.exe` | `.exe` | Windows 7/10, PowerShell 5.1 | PC datati, nessun WebView2 | [Vai alla release](https://github.com/Molinays/MoliOptimizer/releases/latest) |
-| **MoliOptimizerFast EN** · `MoliOptimizerFast-EN.exe` | `.exe` | Windows 7/10, PowerShell 5.1 | PC datati, interfaccia inglese | [Vai alla release](https://github.com/Molinays/MoliOptimizer/releases/latest) |
+Scarica l'ultima release da [GitHub Releases](https://github.com/Molinays/MoliOptimizer/releases/latest). Gli hash SHA-256 sono pubblicati in `dist/v3/SHA256SUMS.txt`.
 
-Nessun installer: l'app è portabile. L'edizione web richiede il **WebView2 Runtime** (già presente su Windows 10/11 aggiornati). Il file singolo estrae il payload in `%LOCALAPPDATA%\MoliOptimizer\WebSingle\` al primo avvio. La versione Web Host va eseguita dalla propria cartella, senza spostare il solo `.exe`.
-
----
-
-## Perché MoliOptimizer?
-
-- **Piano su misura, non un elenco fisso.** La scansione legge hardware, dischi, RAM, app installate, servizi e voci di avvio, poi propone solo le ottimizzazioni adatte a quel PC.
-- **Niente modifiche silenziose.** Ogni operazione richiede selezione e conferma esplicita. La scansione iniziale è in sola lettura.
-- **Due edizioni, stesso motore.** Web moderna per Windows 10/11 e Fast nativa per PC vecchi, con gli stessi cataloghi e gli stessi backup.
-- **Privacy e reattività.** Tweak mirati per telemetria, pubblicità, suggerimenti, Game Bar, ricerca, clipboard, input, servizi e latenza di rete.
-- **Pulizia e RAM incluse.** Cache delle app, file temporanei, debloat selettivo, ottimizzazione RAM e deep clean restano disponibili.
-- **Backup e ripristino.** Prima delle modifiche viene creato un punto di ripristino quando possibile; registro, servizi, avvio e alimentazione vengono salvati per il rollback.
-- **App Store, ISO e Playbook.** Cataloghi integrati per installare software, scaricare ISO ufficiali e consultare tool e progetti della community.
-
----
-
-## Uno sguardo all'app
-
-<p align="center">
-  <img src="docs/images/web-optimizations-crop.png" alt="Piano personalizzato di MoliOptimizer" width="920">
-</p>
-
-<p align="center">
-  <em>Piano personalizzato: punteggio del PC, RAM libera, cache recuperabile e voci divise per tipo.</em>
-</p>
-
-### Piano e ottimizzazioni
-
-La scheda **Per il tuo PC** costruisce un piano dinamico in base all'hardware e alle app rilevate. Ogni voce mostra il tipo di intervento e, quando disponibile, lo spazio recuperabile. Il footer con **Applica consigliati** resta sempre visibile.
-
-### Info, versione e aggiornamenti
-
-<p align="center">
-  <img src="docs/images/web-info-crop.png" alt="Scheda Info di MoliOptimizer" width="920">
-</p>
-
-<p align="center">
-  <em>Hardware, dischi, punteggio, conteggi, versione, licenza e controllo aggiornamenti GitHub.</em>
-</p>
-
-> Le schermate mostrano l'edizione web. **MoliOptimizerFast** usa la stessa logica con una finestra WinForms nativa, senza WebView2.
+Nessun installer e nessun servizio persistente. La scansione iniziale è in sola lettura; le modifiche richiedono selezione, conferma e, per le operazioni privilegiate, UAC.
 
 ---
 
 ## Funzioni
 
 ### Piano personalizzato
-
-- Scansione di CPU, GPU, RAM, dischi, sistema operativo, app installate, servizi e voci di avvio.
-- Punteggio con dettaglio per memoria, spazio disco, servizi non essenziali, debloat e avvio.
-- Piano costruito sul PC reale, non un preset uguale per tutti.
-- Profilo CPU/GPU (AMD, Intel, NVIDIA) e tweak mirati quando presenti e supportati: HAGS per GPU compatibili, ULPS AMD desktop, piano Ryzen, boost CPU e telemetria NVIDIA.
+- Lettura di CPU, GPU, RAM, dischi, sistema operativo, app installate, servizi e voci di avvio.
+- Punteggio del PC con dettaglio per memoria, spazio disco, servizi, debloat e avvio.
+- Piano costruito sull'hardware reale, non un preset uguale per tutti.
+- Profili AMD, Intel e NVIDIA, con tweak mirati quando compatibili: HAGS, ULPS, piano Ryzen, boost CPU e telemetria NVIDIA.
 - Applicazione selettiva: nessuna modifica parte senza scelta e conferma.
 
-### Privacy
-
-- Telemetria, ID pubblicitario, suggerimenti Start/Store e contenuti cloud.
-- Timeline, ricerca web nel menu Start, widget, Copilot e Recall su Windows 11.
-- Cronologia appunti cloud, raccolta input/inchiostro e schermata di blocco Spotlight.
+### Privacy e reattività
+- Telemetria, ID pubblicitario, suggerimenti Start/Store, Timeline, widget, Copilot e Recall.
+- Cronologia appunti cloud, raccolta input/inchiostro, schermata di blocco Spotlight.
 - AutoPlay/AutoRun, SMB1, WPAD, Assistenza remota e Desktop remoto.
-- Tweak separati per chi vuole un profilo più prudente o più aggressivo.
+- Piano energetico, Fast Startup, TRIM, Core Parking, priorità foreground, Game Mode e Game DVR.
+- MMCSS, QoS riservata, Nagle TCP, menu senza ritardo, chiusura app più rapida e animazioni della taskbar.
+- Verifica del valore scritto per i tweak di registro: un errore non viene presentato come successo.
 
-### Prestazioni e reattività
-
-- Piano energetico, Fast Startup, TRIM, Core Parking e priorità foreground.
-- Game Mode, Game DVR/Bar, MMCSS, QoS riservata e Nagle TCP.
-- Menu senza ritardo, chiusura app più rapida e animazioni della taskbar.
-- Prefetch/Superfetch e Edge Startup Boost per chi accetta un profilo avanzato.
-- Verifica del valore scritto per i tweak di registro; gli errori non vengono presentati come successi.
-
-### Debloat
-
-- Rimozione delle app preinstallate selezionate tramite `Remove-AppxPackage` e `Remove-AppxProvisionedPackage`.
+### Debloat, servizi e avvio
+- Rimozione delle app preinstallate selezionate con `Remove-AppxPackage` e `Remove-AppxProvisionedPackage`.
 - Le voci protette o non rimosse vengono segnalate, non conteggiate come completate.
-- Ripristino tramite backup di sistema o reinstallazione manuale dallo Store.
-
-### Servizi Windows
-
-- Impostazione del tipo di avvio: automatico, manuale o disabilitato.
-- Arresto dei servizi disabilitati e verifica finale dello stato.
-- Backup dello stato precedente per il ripristino.
-- I servizi protetti da Windows vengono saltati senza bloccare il resto del piano.
-
-### Avvio
-
-- Lettura delle voci attive in `HKCU`, `HKLM` e `HKLM\WOW6432Node`.
-- Esclusione delle pseudo-proprietà PowerShell e delle voci già disattivate.
-- Disattivazione tramite `StartupApproved\Run` o `StartupApproved\Run32`.
-- Verifica reale della scrittura e rimozione dall'elenco delle voci attive.
+- Tipo di avvio dei servizi: automatico, manuale o disabilitato, con arresto e verifica finale.
+- Backup dello stato precedente di servizi e voci di avvio.
+- Disattivazione delle voci di avvio tramite `StartupApproved` e verifica reale della scrittura.
 
 ### Pulizia, RAM e deep clean
-
 - Cache, file temporanei e residui delle applicazioni.
-- Dimensioni reali e cache delle app rilevate dopo la scansione.
+- Dimensioni reali e cache rilevate dopo la scansione.
 - Le cartelle in uso possono essere saltate; il risultato riporta lo spazio effettivamente liberato.
-- Ottimizzazione RAM e deep clean restano disponibili e non sono stati ridotti.
+- Ottimizzazione RAM e deep clean restano disponibili e non vengono ridotti dalle modalità rapide.
 
 ### App Store, ISO e Playbook
-
 - App Store con catalogo winget e icone locali.
 - ISO con link ai download ufficiali.
 - Playbook con progetti e tool della community.
 - Ricerca e filtri locali, interfaccia IT/EN.
 
 ### Ripristino
-
 - Ripristino del backup creato prima delle ottimizzazioni.
 - Ripristino dei valori predefiniti di Windows per i tweak applicati.
-- Servizi, voci di avvio e valori di registro salvati vengono riapplicati dal backup.
+- Servizi, voci di avvio e valori di registro vengono riapplicati dal backup.
 - Le app rimosse con Debloat richiedono una reinstallazione manuale.
 
 ---
 
-## Due edizioni
+## Protezione
 
-| | **MoliOptimizer Web** | **MoliOptimizerFast** |
-|---|---|---|
-| Interfaccia | HTML/CSS/JS in WebView2 | WinForms nativa |
-| Windows | 10/11 x64 | 7/10, 32 o 64 bit |
-| Runtime | WebView2 Runtime | PowerShell 5.1 |
-| Installazione | Nessun installer; file singolo o cartella portabile | Nessun installer |
-| Lingua | Toggle IT/EN a runtime | Build IT ed EN separate |
-| Ideale per | PC moderni e UI più aggiornabile | PC datati e ambienti senza WebView2 |
-| Motore | PowerShell modulare | PowerShell modulare |
-| Backup | Sì | Sì |
+Le build distribuite non contengono il motore in chiaro:
 
-Entrambe le edizioni usano lo stesso motore, gli stessi cataloghi e lo stesso formato di backup. La web è più comoda da aggiornare; Fast è la scelta quando WebView2 non è disponibile o le risorse sono limitate.
+- **Fast:** il bundle viene compresso, cifrato con AES-256-CBC e autenticato con HMAC-SHA256, poi eseguito in memoria da un loader compilato. I bundle temporanei in chiaro vivono solo in `%TEMP%` durante la build e vengono rimossi.
+- **Web Host:** UI, bridge e helper sono in un payload cifrato dentro l'exe. La UI viene servita dalla memoria, senza una cartella `ui` o `src` accanto al programma.
+- **WebSingle:** il launcher incorpora l'host protetto e le DLL WebView2; la UI resta nel payload cifrato dell'host.
+- **Bridge web:** viene scritto solo in una cartella runtime nascosta, con nome legato al payload e al processo, e cancellato alla chiusura.
+- **Nessun sorgente in `dist/v3`:** la build verifica che non restino `.ps1`, `.js`, `.html` o `.css` nel pacchetto web.
+
+Nessuna protezione client-side è indecifrabile in assoluto: un programma che deve eseguire il proprio codice deve poterlo decifrare. Questa pipeline elimina il sorgente leggibile dalla distribuzione e alza il costo dell'analisi; non è un packer pensato per eludere gli antivirus. Per una verifica di sicurezza da parte di un vendor si può fornire una build non offuscata separata.
+
+> Se hai usato build precedenti alla 3.2, elimina le vecchie cartelle `%LOCALAPPDATA%\MoliOptimizer\WebSingle\3.0.0-*` prima di distribuire il PC: contengono i sorgenti delle versioni vecchie. Le build 3.2 non ne creano più.
 
 ---
 
@@ -200,17 +136,32 @@ Entrambe le edizioni usano lo stesso motore, gli stessi cataloghi e lo stesso fo
 
 ---
 
+## Due edizioni
+
+| | **MoliOptimizer Web** | **MoliOptimizerFast** |
+|---|---|---|
+| Interfaccia | HTML/CSS/JS in WebView2 | WinForms nativa |
+| Windows | 10/11 x64 | 7/10, 32 o 64 bit |
+| Runtime | WebView2 Runtime | PowerShell 5.1 |
+| Installazione | Nessun installer; file singolo o cartella portabile | Nessun installer |
+| Lingua | Toggle IT/EN a runtime | Build IT ed EN separate |
+| Ideale per | PC moderni e UI più aggiornabile | PC datati e ambienti senza WebView2 |
+| Motore | PowerShell modulare | PowerShell modulare |
+| Backup | Sì | Sì |
+
+Entrambe le edizioni usano lo stesso motore, gli stessi cataloghi e lo stesso formato di backup. La web è più comoda da aggiornare; Fast è la scelta quando WebView2 non è disponibile o le risorse sono limitate.
+
+---
+
 ## Requisiti
 
 ### Edizione web
-
 - Windows 10 o Windows 11 aggiornato, x64.
 - WebView2 Runtime. Su Windows 10/11 recenti è già presente; se manca, l'app lo segnala.
 - Nessun runtime Node o Electron richiesto per usare l'exe.
 - Per la build Tauri opzionale: Rust, MSVC Build Tools e WebView2.
 
 ### MoliOptimizerFast
-
 - Windows 7 o Windows 10, 32 o 64 bit.
 - PowerShell 5.1.
 - Nessuna dipendenza da WebView2, Electron o runtime esterni.
@@ -236,7 +187,7 @@ L'app non applica nulla senza una selezione esplicita e una conferma. Le operazi
 
 ## Aggiornamenti
 
-La versione applicazione è **3.0.0**. La release più recente è disponibile su GitHub:
+La versione applicazione è **3.2.0**. La release più recente è disponibile su GitHub:
 
 https://github.com/Molinays/MoliOptimizer/releases/latest
 
@@ -253,24 +204,24 @@ MoliOptimizer non installa aggiornamenti in background e non esegue modifiche au
 <details>
 <summary>Comandi per i maintainer</summary>
 
-La build vive nella cartella `build/`; il motore resta modulare in `src/`. La cartella `Old/` contiene solo versioni storiche e non viene usata dalla build.
+Il motore resta modulare in `src/`, la GUI web in `web/`, gli script di build in `build/`. La cartella `Old/` contiene solo versioni storiche e non viene usata dalla build.
 
 ```powershell
-# Build completa: Fast IT, Fast EN e web
+# Build completa: Fast IT, Fast EN e Web Host protetto
 .\build\Build-All.ps1
 
 # Solo MoliOptimizerFast
 .\build\Build-Exe.ps1 -Lang IT
 .\build\Build-Exe.ps1 -Lang EN
 
-# Web con guscio WebView2, senza Rust/MSVC
+# Web Host protetto, senza Rust/MSVC
 .\build\Build-WebHost.ps1
 
-# Web con Tauri, se Rust e MSVC sono disponibili
-.\build\Build-Web.ps1
-
-# Web in un solo file: UI, motore e DLL incorporati
+# Web in un solo file: host, UI, motore e DLL incorporati
 .\build\Build-WebSingle.ps1
+
+# Solo sviluppo: guscio Tauri, finisce in dist/dev/web
+.\build\Build-Web.ps1
 ```
 
 Per l'anteprima web:
@@ -281,6 +232,8 @@ npm run dev
 # http://127.0.0.1:5178
 ```
 
+`Build-WebHost.ps1` è il percorso di release web: incorpora UI e motore in un payload cifrato. Il guscio Tauri (`Build-Web.ps1`) resta solo per lo sviluppo e non va usato per distribuire una build sorgente.
+
 Verifiche principali:
 
 ```powershell
@@ -289,7 +242,9 @@ Verifiche principali:
 .\build\Test-Startup.ps1
 ```
 
-Se un exe è aperto, la build deve fallire con un messaggio chiaro: non dichiarare mai un falso successo.
+Se un exe è aperto, la build deve fallire con un messaggio chiaro: non dichiarare mai un falso successo. I bundle classici in chiaro vengono creati solo in `%TEMP%` e rimossi a fine build; in `dist/v3` non restano sorgenti: solo exe, DLL WebView2, favicon e `SHA256SUMS.txt`.
+
+La versione 3.2 usa `dist/v3` come cartella della serie 3.x: il numero nella cartella indica l'architettura di build, non la minor release.
 
 </details>
 
@@ -319,5 +274,5 @@ Le ottimizzazioni possono modificare il comportamento del sistema operativo. Ver
 
 <p align="center">
   <strong>Made by Molinays</strong><br>
-  <sub>MoliOptimizer v3 · Windows Optimization Suite</sub>
+  <sub>MoliOptimizer 3.2 · Windows 7/10/11</sub>
 </p>
