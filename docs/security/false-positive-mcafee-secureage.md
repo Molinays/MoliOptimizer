@@ -4,9 +4,9 @@ Questo documento serve a richiedere la riclassificazione di MoliOptimizer a McAf
 
 ## Dati dell'applicazione
 
-- Prodotto: MoliOptimizer v3.5 (web) e MoliOptimizerFast v3.5 (PowerShell)
+- Prodotto: MoliOptimizer v4.0 (web) e MoliOptimizerFast v4.0 (PowerShell)
 - Autore: Molinays
-- Versione: 3.5.0
+- Versione: 4.0.0
 - Repository: https://github.com/Molinays/MoliOptimizer
 - Release: https://github.com/Molinays/MoliOptimizer/releases
 - Tipo: ottimizzatore Windows con GUI web e GUI classica
@@ -19,10 +19,10 @@ Questi sono gli artefatti attuali, ancora non firmati. Dopo la firma gli hash ca
 
 | File | SHA-256 | Dimensione |
 |---|---|---|
-| `MoliOptimizer.exe` | `54C336703AFE0BD44BBFEE97E8FF62DCA8571D5442D81D063BA2C614794B5FFE` | 1.469.440 byte |
-| `MoliOptimizer-Web.exe` | `2FEE32A04ADF120C111372787FB2DF8AA85AD2DA75D1A6362E842076EB9932A9` | 427.008 byte |
-| `MoliOptimizerFast-IT.exe` | `E5996024345C481681048B14034AC72DD08BDD5CEA42ABA90D096BCE9AD4A392` | 364.544 byte |
-| `MoliOptimizerFast-EN.exe` | `C918536CFEEBA9EB6C72EA490003820035830189130BE74E595DF178E886ED97` | 408.064 byte |
+| `MoliOptimizer.exe` | `2C058D6B4E4438EC6FE39A798E99DD4538E2195837E9EE092926A8191262705D` | 1.469.440 byte |
+| `MoliOptimizer-Web.exe` | `59B4A5184F8B52249F33DF4BC7DFE4557B7B994A61CE2C20105EE8B3A9E6A441` | 427.008 byte |
+| `MoliOptimizerFast-IT.exe` | `CEAD0967ECFBAC7CD23D48DCB000F3FFA1447674BC748AAAA796089B6AD4F182` | 124.416 byte |
+| `MoliOptimizerFast-EN.exe` | `D413ADC2CFD20B35F1ADDCEB8D2B931DBCB6EB2EA0172672D739373FA894A10D` | 136.704 byte |
 
 ## Comportamento dichiarato
 
@@ -33,7 +33,7 @@ MoliOptimizer:
 - salva un backup in `%ProgramData%\MoliOptimizer` e permette il ripristino;
 - usa PowerShell per le operazioni di sistema e richiede l'elevazione per registro, servizi, Appx e alimentazione;
 - nell'edizione web serve la GUI a WebView2 tramite risorse intercettate, senza aprire un server HTTP locale;
-- nella build pubblica 3.5 il payload web è compresso ma non cifrato, mentre il bundle Fast è incorporato in chiaro; non usa `ps2exe` e non è un packer di evasione;
+- la release 4.0 usa payload Fast e Web cifrati; la variante trasparente per l'analisi si crea con `Build-All.ps1 -Transparent`; non usa `ps2exe` e non è un packer di evasione;
 - non installa servizi persistenti, non crea driver e non stabilisce connessioni di comando e controllo;
 - contatta GitHub solo per il controllo aggiornamenti e usa i collegamenti ufficiali per winget e ISO.
 
@@ -86,26 +86,26 @@ Selezionare la segnalazione come falso positivo, allegare il file della release 
 
 ## Testo pronto per la segnalazione
 
-> Oggetto: False positive report - MoliOptimizer v3.5 - Molinays
+> Oggetto: False positive report - MoliOptimizer v4.0 - Molinays
 >
-> We are reporting a false positive for MoliOptimizer v3.5, a Windows optimization application published by Molinays.
+> We are reporting a false positive for MoliOptimizer v4.0, a Windows optimization application published by Molinays.
 >
 > File: [nome file]
 > SHA-256: [hash della build firmata]
-> Version: 3.5.0
+> Version: 4.0.0
 > Detection: [nome esatto McAfee/SecureAge]
 > VirusTotal: [link al report]
 >
 > MoliOptimizer scans hardware, installed applications, services and startup entries. It applies only user-selected optimizations, creates a backup before changes, and provides a restore function. The application uses PowerShell 5.1 for system operations and requests administrator rights only for registry, services, Appx and power changes. It does not install a service or driver and does not use command-and-control infrastructure. The web edition serves its UI to WebView2 from memory and does not open an HTTP listener.
 >
-> The attached build is the public MoliOptimizer 3.5 artifact. Please review the detection and allowlist the file if it is confirmed clean. A trusted code-signing certificate is the remaining release step; if a signed artifact is required for the review, request it from Molinays.
+> The attached build is the MoliOptimizer 4.0 artifact (or the transparent 4.0 build if requested). Please review the detection and allowlist the file if it is confirmed clean. A trusted code-signing certificate is the remaining release step; if a signed artifact is required for the review, request it from Molinays.
 >
 > Repository: https://github.com/Molinays/MoliOptimizer
 
 ## Dopo l'invio
 
 - Non disattivare McAfee, SecureAge o Defender e non aggiungere esclusioni.
-- La build pubblica 3.5 non cifra il payload: UI, bridge e script sono recuperabili da chi analizza il file. L'opzione interna `Build-WebHost.ps1 -Protect` protegge il codice proprietario ma non è pensata per eludere il motore e non va pubblicata. Se il vendor chiede una build non offuscata per l'analisi, fornire la build pubblica insieme all'artefatto firmato.
+- La release 4.0 cifra il payload: UI, bridge e script non sono recuperabili come file in chiaro, ma l'offuscamento non è pensato per eludere il motore. Se il vendor chiede una build non offuscata per l'analisi, fornire `Build-All.ps1 -Transparent` insieme all'artefatto firmato.
 - Ricaricare il file su VirusTotal dopo la risposta del vendor e verificare che le due rilevazioni siano sparite.
-- la build 3.5 ha già rimosso `ps2exe` (Fast), il server HTTP locale (Web) e il launcher .NET esterno (WebSingle); se un motore continua a rilevare, il passo successivo è la firma trusted e la riclassificazione vendor, non un ulteriore imballaggio.
-- i due report indicati dall'utente sono: `https://www.virustotal.com/gui/file/1f8b21bfc1ce339d59b23b23f9547cecc954eb6088774e30daf6201a763a9ad6` e `https://www.virustotal.com/gui/file/b469816cfe400b59f65a961e306e9eea54df78e866b1d72d0c8ac79d407f75d7`. I file 3.5 hanno hash nuovi: vanno ricaricati su VirusTotal per una nuova analisi.
+- la build 4.0 ha già rimosso `ps2exe` (Fast), il server HTTP locale (Web) e il launcher .NET esterno (WebSingle); se un motore continua a rilevare, il passo successivo è la firma trusted e la riclassificazione vendor, non un ulteriore imballaggio.
+- i file 4.0 hanno hash nuovi: vanno ricaricati su VirusTotal per una nuova analisi.
