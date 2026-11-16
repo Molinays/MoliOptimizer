@@ -332,6 +332,7 @@ Per permessi e richieste: apri una issue nel repository o contatta **Molinays**.
 MoliOptimizer non è affiliato a Microsoft. Windows è un marchio di Microsoft Corporation.
 
 Le ottimizzazioni possono modificare il comportamento del sistema operativo. Verifica sempre il piano, usa il ripristino disponibile e non applicare voci che non comprendi. L'uso dell'app avviene a tuo rischio.
+Questa cosa la scrivo per sicurezza, l'app è testata e funziona bene.
 
 <p align="center">
   <strong>Made by Molinays</strong><br>
