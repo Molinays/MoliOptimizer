@@ -6,12 +6,12 @@
 
 <p align="center">
   <strong>Ottimizzazione Windows su misura, con backup e ripristino.</strong><br>
-  Due edizioni Windows con lo stesso motore, più un'app Android nativa.
+  Due edizioni Windows con lo stesso motore, più un'app Android nativa (in beta).
 </p>
 
 <p align="center">
   <img alt="Platform" src="https://img.shields.io/badge/PLATFORM-WINDOWS%207%20%7C%2010%20%7C%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white">
-  <img alt="Android (beta)" src="https://img.shields.io/badge/ANDROID-7%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white">
+  <img alt="Android" src="https://img.shields.io/badge/ANDROID-7%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white">
   <img alt="Version" src="https://img.shields.io/badge/VERSION-4.0.0-2563EB?style=for-the-badge">
   <img alt="Engine" src="https://img.shields.io/badge/ENGINE-POWERSHELL%205.1-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
   <img alt="License" src="https://img.shields.io/badge/LICENSE-PROPRIETARY-DC2626?style=for-the-badge">
